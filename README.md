@@ -26,6 +26,7 @@ this lib will be used to add comments in github
 
 You can also use body file
 
+### FILES ARE NOT WORKING YET.
 ```yaml
   - name: Comment in discussion
     uses: shield-wall/comments@main

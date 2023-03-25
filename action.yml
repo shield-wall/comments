@@ -34,7 +34,4 @@ inputs:
 #        value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
     using: 'node16'
-    main: 'index.ts'
-branding:
-    icon: 'message-square'
-    color: 'gray-dark'
+    main: 'dist/index.js'

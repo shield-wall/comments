@@ -1,12 +1,12 @@
 import {Octokit} from "@octokit/core";
 import * as core from '@actions/core';
-import {DiscussionCommentSaveProcessor} from "./src/processors/discussion-comment-save-processor";
-import {Config} from "./src/inputs/config";
-import {InputProcessor} from "./src/processors/input-processor";
+import {DiscussionCommentSaveProcessor} from "./processors/discussion-comment-save-processor";
+import {Config} from "./inputs/config";
+import {InputProcessor} from "./processors/input-processor";
 
-async function run() {
+async function run(): Promise<void> {
     try {
-        const octokit = new Octokit({auth: core.getIDToken()});
+        const octokit = new Octokit({auth: core.getInput('token')});
 
         const config: Config = {
             organization: core.getInput('organization'),
@@ -24,7 +24,7 @@ async function run() {
         let processor = new DiscussionCommentSaveProcessor(octokit, config);
         processor.process({identifier: config.discussionId, body: body});
     } catch (error) {
-        core.setFailed(error.message);
+        if (error instanceof Error) core.setFailed(error.message)
     }
 }
 
