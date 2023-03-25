@@ -6,14 +6,13 @@ import {InputProcessor} from "./src/processors/input-processor";
 
 const octokit = new Octokit({auth: core.getIDToken()});
 
-// TODO change process args for inputs from github action.
 const config: Config = {
-    organization: core.getInput('organization', {required: true}),
-    repository: core.getInput('repository', {required: true}),
-    discussionId: parseInt(core.getInput('discussionId', {required: true})),
-    bodyFileHeader: core.getInput('bodyFileHeader', {required: false}),
-    body: core.getInput('body', {required: false}),
-    bodyFileFooter: core.getInput('bodyFileFooter', {required: false}),
+    organization: core.getInput('organization'),
+    repository: core.getInput('repository'),
+    discussionId: parseInt(core.getInput('discussionId')),
+    bodyFileHeader: core.getInput('bodyFileHeader'),
+    body: core.getInput('body'),
+    bodyFileFooter: core.getInput('bodyFileFooter'),
 };
 
 // process body

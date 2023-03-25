@@ -1,0 +1,40 @@
+name: 'Hello World'
+description: 'It is a package to add comments in github, atm it is avalaible only for discussions'
+inputs:
+    token:
+        description: 'GITHUB_TOKEN or a repo scoped PAT.'
+        default: ${{ github.token }}
+
+    organization:
+        description: 'Organization'
+        required: true
+
+    repository:
+        description: 'repository'
+        required: true
+
+    discussionId:
+        description: 'Discussion id'
+        required: true
+
+    bodyFileHeader:
+        description: 'File that will be injected on top of discussion comment'
+        required: false
+
+    body:
+        description: 'body comment.'
+        required: false
+
+    bodyFileFooter:
+        description: 'File that will be injected on top of discussion comment'
+        required: false
+#outputs:
+#    random-number:
+#        description: "Random number"
+#        value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+    using: 'node18'
+    main: 'index.ts'
+branding:
+    icon: 'message-square'
+    color: 'gray-dark'
