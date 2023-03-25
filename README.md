@@ -9,11 +9,39 @@ this lib will be used to add comments in github
 
 ### Usage
 
+```yaml
+  - name: Comment in discussion
+    uses: shield-wall/comments@main
+    with:
+        organization: 'shield-wall'
+        repository: 'myprofile'
+        discussionId: 123
+        body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [shield-wall/comments][link1]
+
+            [link1]: https://github.com/shield-wall/comments
 ```
-    organization: 'shield-wall',
-    repository: 'myprofile',
-    discussionId: 123,
-    bodyFileHeader: ./your_file.md,
-    body: 'your **markdown** to appear into the discussion comment.',
-    bodyFileFooter: ./your_file_2.md,
+
+You can also use body file
+
+```yaml
+  - name: Comment in discussion
+    uses: shield-wall/comments@main
+    with:
+        organization: 'shield-wall'
+        repository: 'myprofile'
+        discussionId: 123
+        bodyFileHeader: ./your_file.md #optional
+        
+        #optional
+        body: | 
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [shield-wall/comments][link1]
+
+            [link1]: https://github.com/shield-wall/comments
+        
+        bodyFileFooter: ./your_file_2.md #optional
 ```
