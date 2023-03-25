@@ -3,11 +3,13 @@ type AuthorMapping = {
 };
 
 export type CommentMapping = {
+    id: string;
     author: AuthorMapping;
     body: string;
 }
 
 export type DiscussionMapping = {
+    id: string;
     number: number;
     author: AuthorMapping;
     comments: {
