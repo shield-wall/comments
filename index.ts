@@ -1,22 +1,20 @@
 import {Octokit} from "@octokit/core";
+import * as core from '@actions/core';
 import {DiscussionCommentSaveProcessor} from "./src/processors/discussion-comment-save-processor";
 import {Config} from "./src/inputs/config";
 import {InputProcessor} from "./src/processors/input-processor";
 
+const octokit = new Octokit({auth: core.getIDToken()});
+
 // TODO change process args for inputs from github action.
 const config: Config = {
-    token: process.argv[2],
-    organization: process.argv[3],
-    repository: process.argv[4],
-    discussionId: 738,
-    bodyFileHeader: './playground/header.md',
-    // bodyFileHeader: undefined,
-    body: 'hel[lo](https://google.com) **middle**',
-    bodyFileFooter: undefined,
+    organization: core.getInput('organization', {required: true}),
+    repository: core.getInput('repository', {required: true}),
+    discussionId: parseInt(core.getInput('discussionId', {required: true})),
+    bodyFileHeader: core.getInput('bodyFileHeader', {required: false}),
+    body: core.getInput('body', {required: false}),
+    bodyFileFooter: core.getInput('bodyFileFooter', {required: false}),
 };
-
-//github api
-const octokit = new Octokit({auth: config.token});
 
 // process body
 let body = new InputProcessor().processBody(config);
