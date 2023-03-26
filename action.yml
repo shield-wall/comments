@@ -1,4 +1,4 @@
-name: 'Hello World'
+name: 'Comments'
 description: 'It is a package to add comments in github, atm it is avalaible only for discussions'
 inputs:
     token:
