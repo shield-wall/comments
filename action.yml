@@ -1,7 +1,8 @@
 name: 'Shield comments'
 description: 'It is a package to add comments in github, atm it is avalaible only for discussions'
-icon: 'bell'
-color: 'yellow'
+branding:
+    icon: 'bell'
+    color: 'yellow'
 inputs:
     token:
         description: 'GITHUB_TOKEN or a repo scoped PAT.'
