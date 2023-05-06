@@ -50,13 +50,10 @@ export class DiscussionRepository
                     }`, this.config
         );
 
-        let discussions = response.repository.discussions.nodes.map(
-            (_discussion) => new Discussion(_discussion)
-        );
+        let discussionFromGithub = response.repository.discussions.nodes.
+            filter(discussion => discussion.number === identifier)[0];
 
-        let discussion = discussions.find(
-            (discussion) => discussion.getIdentifier() === identifier
-        );
+        let discussion = new Discussion(discussionFromGithub)
 
         if (discussion === undefined)
             throw new NotFoundException();
