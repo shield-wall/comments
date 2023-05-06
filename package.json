@@ -2,7 +2,6 @@
     "name": "comments",
     "description": "",
     "main": "lib/src/main.js",
-    "type": "module",
     "scripts": {
         "build": "tsc && ncc build --source-map --license licenses.txt",
         "build:docker": "docker run -v $(PWD):/app -w /app --rm node:16 npm run build",
