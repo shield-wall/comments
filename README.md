@@ -11,7 +11,7 @@ this lib will be used to add comments in github
 
 ```yaml
   - name: Comment in discussion
-    uses: shield-wall/comments@main
+    uses: shield-wall/comments@0.0.2
     with:
         organization: 'shield-wall'
         repository: 'myprofile'
@@ -29,7 +29,7 @@ You can also use body file
 ### FILES ARE NOT WORKING YET.
 ```yaml
   - name: Comment in discussion
-    uses: shield-wall/comments@main
+    uses: shield-wall/comments@0.0.2
     with:
         organization: 'shield-wall'
         repository: 'myprofile'
