@@ -1,7 +1,7 @@
 require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3911:
+/***/ 5571:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -18,7 +18,7 @@ exports.NotFoundException = NotFoundException;
 
 /***/ }),
 
-/***/ 9536:
+/***/ 3109:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -58,8 +58,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(6762);
 const core = __importStar(__nccwpck_require__(2186));
-const discussion_comment_save_processor_1 = __nccwpck_require__(3637);
-const input_processor_1 = __nccwpck_require__(4118);
+const discussion_comment_save_processor_1 = __nccwpck_require__(7369);
+const input_processor_1 = __nccwpck_require__(1301);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -89,7 +89,7 @@ run();
 
 /***/ }),
 
-/***/ 3900:
+/***/ 7847:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -138,7 +138,7 @@ exports.DiscussionComment = DiscussionComment;
 
 /***/ }),
 
-/***/ 3637:
+/***/ 7369:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -154,7 +154,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DiscussionCommentSaveProcessor = void 0;
-const discussion_repository_1 = __nccwpck_require__(8902);
+const discussion_repository_1 = __nccwpck_require__(5867);
 class DiscussionCommentSaveProcessor {
     constructor(octokit, config) {
         this.octokit = octokit;
@@ -179,7 +179,7 @@ exports.DiscussionCommentSaveProcessor = DiscussionCommentSaveProcessor;
 
 /***/ }),
 
-/***/ 4118:
+/***/ 1301:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -209,7 +209,7 @@ exports.InputProcessor = InputProcessor;
 
 /***/ }),
 
-/***/ 8902:
+/***/ 5867:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -225,8 +225,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DiscussionRepository = void 0;
-const discussion_1 = __nccwpck_require__(3900);
-const not_found_exception_1 = __nccwpck_require__(3911);
+const discussion_1 = __nccwpck_require__(7847);
+const not_found_exception_1 = __nccwpck_require__(5571);
 class DiscussionRepository {
     constructor(octokit, config) {
         this.octokit = octokit;
@@ -8428,7 +8428,7 @@ module.exports = require("zlib");
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nccwpck_require__(9536);
+/******/ 	var __webpack_exports__ = __nccwpck_require__(3109);
 /******/ 	module.exports = __webpack_exports__;
 /******/ 	
 /******/ })()
